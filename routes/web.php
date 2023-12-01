@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\OptimalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [OptimalController::class, 'index'])->name('home');
+Route::get('/product-category', [OptimalController::class, 'category'])->name('product-category');
+Route::get('/product-detail', [OptimalController::class, 'detail'])->name('product-detail');
