@@ -21,7 +21,7 @@ Route::get('/product-category', [OptimalController::class, 'category'])->name('p
 Route::get('/product-detail', [OptimalController::class, 'detail'])->name('product-detail');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resources([
         'category'      => CategoryController::class,
         'sub-category'  => SubCategoryController::class
