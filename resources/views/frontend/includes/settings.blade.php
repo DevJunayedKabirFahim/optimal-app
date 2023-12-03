@@ -316,7 +316,7 @@
     </div>
 </div>
 <!-- End Addtocart Added Popup-->
-@if(\Request::route()->getName() == 'home')
+{{--@if(\Request::route()->getName() == 'home')--}}
     <!--Newsletter Popup-->
     <div id="newsletter-modal" class="style2 mfp-with-anim mfp-hide">
         <div class="d-flex flex-row align-items-center">
@@ -341,4 +341,4 @@
         <button title="Close (Esc)" type="button" class="mfp-close text-black">×</button>
     </div>
     <!--End Newsletter Popup-->
-@endif
+{{--@endif--}}

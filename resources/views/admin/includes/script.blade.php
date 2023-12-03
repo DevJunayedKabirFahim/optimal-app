@@ -89,7 +89,7 @@
 <!-- FORM ELEMENTS JS -->
 <script src="{{asset('/')}}admin/assets/js/formelementadvnced.js"></script>
 
-{{--<script>
+<script>
     function setSubCategory(categoryId) {
         $.ajax({
             type: "GET",
@@ -110,7 +110,7 @@
             }
         });
     }
-</script>--}}
+</script>
 
 
 
