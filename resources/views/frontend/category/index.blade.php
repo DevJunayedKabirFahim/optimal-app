@@ -466,7 +466,7 @@
 
             <!--Main Content-->
             <div class="col-12 col-sm-12 col-md-12 col-lg-9 main-col">
-                <div class="page-title"><h1>Womens</h1></div>
+                <div class="page-title"><h1>Callection</h1></div>
                 <!--Active Filters-->
                 <ul class="active-filters d-flex flex-wrap align-items-center m-0 list-unstyled">
                     <li><a href="#">Clear all</a></li>
@@ -481,7 +481,7 @@
                             <li class="product-count d-flex align-items-center">
                                 <button type="button" class="btn btn-filter an an-slider-3 d-inline-flex d-lg-none me-2 me-sm-3"><span class="hidden">Filter</span></button>
                                 <div class="filters-toolbar__item">
-                                    <span class="filters-toolbar__product-count d-none d-sm-block">Showing: 21 products</span>
+                                    <span class="filters-toolbar__product-count d-none d-sm-block">Showing: {{ count($products) }} product{{count($products) > 1 ? 's' : ''}}</span>
                                 </div>
                             </li>
                             <li class="collection-view ms-sm-auto">
@@ -513,16 +513,17 @@
                 <!--Product Grid-->
                 <div class="grid-products grid--view-items prd-grid">
                     <div class="row">
+                        @foreach($products as $product)
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 item">
                             <!--Start Product Image-->
                             <div class="product-image">
                                 <!--Start Product Image-->
-                                <a href="{{ route('product-detail') }}" class="product-img">
+                                <a href="{{ route('product-detail', ['id' => $product->id]) }}" class="product-img">
                                     <!-- image -->
-                                    <img class="primary blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-1.jpg" src="{{asset('/')}}frontend/assets/images/products/product-1.jpg" alt="image" title="">
+                                    <img class="primary blur-up lazyload" data-src="{{asset($product->image)}}" src="{{asset($product->image)}}" alt="image" title="">
                                     <!-- End image -->
                                     <!-- Hover image -->
-                                    <img class="hover blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-1-1.jpg" src="{{asset('/')}}frontend/assets/images/products/product-1-1.jpg" alt="image" title="">
+                                    <img class="hover blur-up lazyload" data-src="{{asset($product->productOtherImages[0]->image)}}" src="{{asset($product->productOtherImages[0]->image)}}" alt="image" title="">
                                     <!-- End hover image -->
                                 </a>
                                 <!--End Product Image-->
@@ -555,13 +556,13 @@
                             <div class="product-details text-center">
                                 <!--Product Name-->
                                 <div class="product-name text-uppercase">
-                                    <a href="{{ route('product-detail') }}">Floral Crop Top</a>
+                                    <a href="{{ route('product-detail', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                 </div>
                                 <!--End Product Name-->
                                 <!--Product Price-->
                                 <div class="product-price">
-                                    <span class="old-price">$199.00</span>
-                                    <span class="price">$219.00</span>
+                                    <span class="old-price">৳{{ $product->regular_price }}</span>
+                                    <span class="price">৳{{ $product->regular_price }}</span>
                                 </div>
                                 <!--End Product Price-->
                                 <!--Product Review-->
@@ -571,7 +572,7 @@
                                 </div>
                                 <!--End Product Review-->
                                 <!--Sort Description-->
-                                <p class="hidden sort-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s specimen book...</p>
+                                <p class="hidden sort-desc">{{$product->short_description}}</p>
                                 <!--End Sort Description-->
                                 <!--Color Variant -->
                                 <ul class="image-swatches swatches">
@@ -602,7 +603,8 @@
                             </div>
                             <!--End Product Details-->
                         </div>
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 item">
+                        @endforeach
+                        {{--<div class="col-6 col-sm-6 col-md-4 col-lg-4 item">
                             <!--Start Product Image-->
                             <div class="product-image">
                                 <!--Start Product Image-->
@@ -1824,7 +1826,7 @@
                                 <!-- End Product Button -->
                             </div>
                             <!--End Product Details-->
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
                 <!--End Product Grid-->

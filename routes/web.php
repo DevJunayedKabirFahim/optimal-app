@@ -11,6 +11,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductOfferController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,10 @@ use App\Http\Controllers\ProductOfferController;
 */
 
 Route::get('/', [OptimalController::class, 'index'])->name('home');
-Route::get('/product-category', [OptimalController::class, 'category'])->name('product-category');
-Route::get('/product-detail', [OptimalController::class, 'detail'])->name('product-detail');
+Route::post('/cart-product', [OptimalController::class, 'addToCard'])->name('addToCart');
+Route::get('/product-category/{id}', [OptimalController::class, 'category'])->name('product-category');
+Route::get('/product-detail/{id}', [OptimalController::class, 'detail'])->name('product-detail');
+Route::resources(['cart' => CartController::class]);
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

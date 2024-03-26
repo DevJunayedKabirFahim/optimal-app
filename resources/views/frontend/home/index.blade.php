@@ -65,16 +65,17 @@
                     <div id="tab1" class="tab_content">
                         <div class="grid-products">
                             <div class="row">
+                                @foreach($products as $product)
                                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
                                     <!-- start product image -->
                                     <div class="product-image">
                                         <!-- start product image -->
-                                        <a href="product-layout1.html" class="product-img">
+                                        <a href="{{ route('product-detail', ['id' => $product->id]) }}" class="product-img">
                                             <!-- image -->
-                                            <img class="primary blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-8.jpg" src="{{asset('/')}}frontend/assets/images/products/product-8.jpg" alt="image" title="">
+                                            <img class="primary blur-up lazyload" data-src="{{asset($product->image)}}" src="{{asset($product->image)}}" alt="image" title="">
                                             <!-- End image -->
                                             <!-- Hover image -->
-                                            <img class="hover blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-8-1.jpg" src="{{asset('/')}}frontend/assets/images/products/product-8-1.jpg" alt="image" title="">
+                                            <img class="hover blur-up lazyload" data-src="{{asset($product->productOtherImages[0]->image)}}" src="{{asset($product->productOtherImages[0]->image)}}" alt="image" title="">
                                             <!-- End hover image -->
                                             <!-- product label -->
                                             <div class="product-labels"><span class="lbl on-sale">50% Off</span></div>
@@ -125,13 +126,13 @@
                                     <div class="product-details text-left">
                                         <!-- product name -->
                                         <div class="product-name">
-                                            <a href="product-layout1.html">Martha Knit Top</a>
+                                            <a href="{{ route('product-detail', ['id' => $product->id]) }}">{{$product->name}}</a>
                                         </div>
                                         <!-- End product name -->
                                         <!-- product price -->
                                         <div class="product-price">
-                                            <span class="old-price">$199.00</span>
-                                            <span class="price">$219.00</span>
+                                            <span class="old-price">৳{{ $product->regular_price }}</span>
+                                            <span class="price">৳{{ $product->selling_price }}</span>
                                         </div>
                                         <!-- End product price -->
                                         <!--Product Review-->
@@ -148,7 +149,8 @@
                                     </div>
                                     <!-- End product details -->
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
+                                @endforeach
+                                {{--<div class="col-6 col-sm-6 col-md-4 col-lg-3 item">
                                     <!-- start product image -->
                                     <div class="product-image">
                                         <!-- start product image -->
@@ -765,7 +767,7 @@
                                         <!-- End Variant -->
                                     </div>
                                     <!-- End product details -->
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                         <div class="view-collection text-center mt-3 mt-md-4">
@@ -2020,17 +2022,19 @@
             </div>
 
             <div class="collection-grid-slider">
+                @foreach($categories as $category)
                 <div class="collection-item">
-                    <a href="shop-top-filter.html" class="collection-grid-link">
+                    <a href="{{route('product-category', ['id' => $category->id])}}" class="collection-grid-link">
                         <div class="img">
-                            <img class="blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/collection/demo2-ct-img1.jpg" src="{{asset('/')}}frontend/assets/images/collection/demo2-ct-img1.jpg" alt="Women"/>
+                            <img class="blur-up lazyload" data-src="{{asset($category->image)}}" src="{{asset($category->image)}}" alt="{{$category->name}}"/>
                         </div>
                         <div class="details">
-                            <h3 class="collection-item-title">Women</h3>
+                            <h3 class="collection-item-title">{{$category->name}}</h3>
                         </div>
                     </a>
                 </div>
-                <div class="collection-item">
+                @endforeach
+                {{--<div class="collection-item">
                     <a href="shop-top-filter.html" class="collection-grid-link">
                         <div class="img">
                             <img class="blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/collection/demo2-ct-img2.jpg" src="{{asset('/')}}frontend/assets/images/collection/demo2-ct-img2.jpg" alt="Men"/>
@@ -2079,7 +2083,7 @@
                             <h3 class="collection-item-title">Shoes</h3>
                         </div>
                     </a>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>

@@ -4,23 +4,26 @@
     <!--Breadcrumbs-->
     <div class="breadcrumbs-wrapper text-uppercase">
         <div class="container">
-            <div class="breadcrumbs"><a href="index.html" title="Back to the home page">Home</a><span>|</span><span class="fw-bold">Product Tabs Left</span></div>
+            <div class="breadcrumbs"><a href="index.html" title="Back to the home page">Home</a><span>|</span><span class="fw-bold">{{$product->name}}</span></div>
         </div>
     </div>
     <!--End Breadcrumbs-->
     <!--Main Content-->
     <div class="container">
         <!--Product Content-->
+        <form action="">
         <div class="product-single">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="product-details-img thumb-left clearfix d-flex-wrap mb-3 mb-md-0">
                         <div class="product-thumb">
                             <div id="gallery" class="product-dec-slider-2 product-tab-left">
-                                <a data-image="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" class="slick-slide slick-cloned active">
-                                    <img class="blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" src="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" alt="product" />
+                                @foreach($product->productOtherImages as $productOtherImage)
+                                <a data-image="{{asset($productOtherImage->image)}}" data-zoom-image="{{asset($productOtherImage->image)}}" class="slick-slide slick-cloned active">
+                                    <img class="blur-up lazyload" data-src="{{asset($productOtherImage->image)}}" src="{{asset($productOtherImage->image)}}" alt="product" />
                                 </a>
-                                <a data-image="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" class="slick-slide slick-cloned">
+                                @endforeach
+                                {{--<a data-image="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" class="slick-slide slick-cloned">
                                     <img class="blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" src="{{asset('/')}}frontend/assets/images/products/product-6-2.jpg" alt="product" />
                                 </a>
                                 <a data-image="{{asset('/')}}frontend/assets/images/products/product-6-3.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-3.jpg" class="slick-slide slick-cloned">
@@ -34,11 +37,11 @@
                                 </a>
                                 <a data-image="{{asset('/')}}frontend/assets/images/products/product-6-6.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-6.jpg" class="slick-slide slick-cloned">
                                     <img class="blur-up lazyload" data-src="{{asset('/')}}frontend/assets/images/products/product-6-5.jpg" src="{{asset('/')}}frontend/assets/images/products/product-6-6.jpg" alt="product" />
-                                </a>
+                                </a>--}}
                             </div>
                         </div>
                         <div class="zoompro-wrap product-zoom-right">
-                            <div class="zoompro-span"><img id="zoompro" class="zoompro" src="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" data-zoom-image="{{asset('/')}}frontend/assets/images/products/product-6-1.jpg" alt="product" /></div>
+                            <div class="zoompro-span"><img id="zoompro" class="zoompro" src="{{asset($product->image)}}" data-zoom-image="{{asset($product->image)}}" alt="product" /></div>
                             <div class="product-labels"><span class="lbl pr-label1">new</span></div>
                             <div class="product-wish"><a class="wishIcon wishlist rounded m-0" href="my-wishlist.html"><i class="icon an an-heart"></i><span class="tooltip-label left">Available in Wishlist</span></a></div>
                             <div class="product-buttons">
@@ -60,22 +63,22 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                     <!-- Product Info -->
                     <div class="product-single__meta">
-                        <h1 class="product-single__title">Product Tabs Left</h1>
+                        <h1 class="product-single__title">{{$product->name}}</h1>
                         <!-- Product Reviews -->
                         <div class="product-review mb-2"><a class="reviewLink d-flex-center" href="#reviews"><i class="an an-star"></i><i class="an an-star mx-1"></i><i class="an an-star"></i><i class="an an-star mx-1"></i><i class="an an-star-o"></i><span class="spr-badge-caption ms-2">16 Reviews</span></a></div>
                         <!-- End Product Reviews -->
                         <!-- Product Info -->
                         <div class="product-info">
-                            <p class="product-type">Vendor: <span>Bohemian France</span></p>
-                            <p class="product-type">Product Type: <span>Floral Top</span></p>
-                            <p class="product-sku">SKU: <span class="variant-sku">1416PT-1</span></p>
+                            <p class="product-type">Vendor: <span>{{$product->brand->name}}</span></p>
+                            <p class="product-type">Product Type: <span>{{$product->subCategory->name}}</span></p>
+                            <p class="product-sku">SKU: <span class="variant-sku">{{$product->code}}</span></p>
                         </div>
                         <!-- End Product Info -->
                         <!-- Product Price -->
                         <div class="product-single__price mb-0">
                             <span class="visually-hidden">Regular price</span>
                             <span class="product-price__sale--single">
-                                            <span class="product-price-old-price d-none">$200.00</span><span class="product-price__price product-price__sale-d">$130.00</span>
+                                            <span class="product-price-old-price d-none">Tk. {{$product->regular_price}}</span><span class="product-price__price product-price__sale-d">Tk. {{$product->selling_price}}</span>
                                             <span class="discount-badge d-none"><span class="devider me-2">|</span><span>Save: </span><span class="product-single__save-amount"><span class="money">$99.00</span></span><span class="off ms-1">(<span>25</span>%)</span></span>
                                         </span>
 
@@ -84,20 +87,23 @@
                     </div>
                     <!-- End Product Info -->
                     <!-- Product Form -->
-                    <form method="post" action="#" class="product-form hidedropdown">
                         <!-- Swatches Color/Size -->
                         <div class="row g-2 variable-select pb-2 w-100">
+
                             <!-- Swatches Color -->
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="swatch clearfix swatch-2 option2" data-option-index="1">
-                                    <label class="label d-flex">Color:<span class="required d-none">*</span><span class="slVariant ms-1 fw-bold">Red</span></label>
-                                    <select>
+                                    <label class="label d-flex">Color<span class="required d-none">*</span><span class="slVariant ms-1 fw-bold"></span></label>
+
+                                    <select name="color">
                                         <option>Select color</option>
-                                        <option>Red</option>
-                                        <option>Yellow</option>
-                                        <option selected="selected">Black</option>
-                                        <option>White</option>
-                                        <option>Green</option>
+                                        @foreach($product->colors as $key => $color)
+                                        {{--<option>Red</option>
+                                        <option>Yellow</option>--}}
+                                        <option selected="{{ $key == 0 ? 'selected' : '' }}">{{ $color->color->name }}</option>
+                                        {{--<option>White</option>
+                                        <option>Green</option>--}}
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -105,16 +111,18 @@
                             <!-- Swatches Size -->
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="swatch clearfix swatch-1 option1" data-option-index="0">
-                                    <label class="label d-flex">Size:<span class="required d-none">*</span><span class="slVariant ms-1 fw-bold">XS</span> <a href="#sizechart" class="sizelink link-underline text-uppercase ms-auto"><i class="icon an an-ruler d-none"></i> Size Guide</a></label>
-                                    <select>
+                                    <label class="label d-flex">Size<span class="required d-none">*</span><span class="slVariant ms-1 fw-bold"></span> <a href="#sizechart" class="sizelink link-underline text-uppercase ms-auto"><i class="icon an an-ruler d-none"></i> Size Guide</a></label>
+                                    <select name="size">
                                         <option>Select size</option>
-                                        <option selected="selected">XS</option>
-                                        <option>S</option>
+                                        @foreach($product->sizes as $key => $size)
+                                        <option selected="{{$key == 0 ? 'selected' : ''}}">{{ $size->size->name }}</option>
+                                        @endforeach
+                                        {{--<option>S</option>
                                         <option>M</option>
                                         <option>L</option>
                                         <option>XL</option>
                                         <option>XXL</option>
-                                        <option>XXXL</option>
+                                        <option>XXXL</option>--}}
                                     </select>
                                 </div>
                             </div>
@@ -137,15 +145,16 @@
                                 </div>
                             </div>
                             <div class="row g-2">
+                                <form action="" method="post">
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="product-form__item--submit">
-                                        <button type="submit" name="add" class="btn rounded product-form__cart-submit mb-0"><span>Add to cart</span></button>
+                                        <button type="submit" class="btn rounded  mb-0">Add to cart</button>
                                         <button type="submit" name="add" class="btn rounded product-form__sold-out mb-0 d-none" disabled="disabled">Sold out</button>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="product-form__item--buyit clearfix">
-                                        <button type="button" class="btn rounded btn-outline-primary proceed-to-checkout">Buy it now</button>
+                                        <button type="submit" class="btn rounded btn-outline-primary proceed-to-checkout">Buy it now</button>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +172,6 @@
                             <a class="btn emaillink me-0" href="#productInquiry"> <i class="icon an an-question-cil me-1"></i> Ask A Question</a>
                         </p>
                         <!-- End Product Info link -->
-                    </form>
                     <!-- End Product Form -->
                     <!-- Social Sharing -->
                     <div class="social-sharing d-flex-center mb-3">
@@ -199,26 +207,7 @@
                     <div class="tab-content" id="vertical-tabContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                             <div class="product-description">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                <div class="row pt-2">
-                                    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                                        <h4 class="text-uppercase">Features</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                        <ul>
-                                            <li>Curabitur pulvinar ex at tempus sodales.</li>
-                                            <li>Donec vitae ante sed ligula viverra fermentum</li>
-                                            <li>Mauris efficitur magna quis lectus lobortis venenatis.</li>
-                                            <li>Phasellus sagittis purus eu dolor porttitor </li>
-                                        </ul>
-                                        <h4 class="text-uppercase">Variations of passages</h4>
-                                        <p class="mb-3">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</p>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-2 mb-md-0">
-                                        <img data-src="{{asset('/')}}frontend/assets/images/about/about-info-s3.jpg" src="{{asset('/')}}frontend/assets/images/about/about-info-s3.jpg" alt="image" />
-                                    </div>
-                                </div>
-                                <h4 class="text-uppercase">Popular belief specimen</h4>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
+                                {!! $product->long_description !!}
                             </div>
                         </div>
                         <div class="tab-pane fade" id="sizeChart" role="tabpanel" aria-labelledby="sizeChart-tab">
@@ -481,6 +470,7 @@
             <!--Product Tab vertical-->
         </div>
         <!--Product Content-->
+        </form>
 
         <!--Product Nav-->
         <a href="product-accordian.html" class="product-nav prev-pro d-flex-center justify-content-between" title="Previous Product">

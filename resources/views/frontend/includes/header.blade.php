@@ -102,7 +102,7 @@
                                         <div class="row">
                                             <div class="lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1 menu-title">Category Page</a>
                                                 <ul class="subLinks">
-                                                    <li class="lvl-2"><a href="{{ route('product-category') }}" class="site-nav lvl-2">Men Fashions</a></li>
+                                                    <li class="lvl-2"><a href="" class="site-nav lvl-2">Men Fashions</a></li>
                                                     <li class="lvl-2"><a href="#" class="site-nav lvl-2">Women Fashions</a></li>
                                                     <li class="lvl-2"><a href="#" class="site-nav lvl-2">Electronics</a></li>
                                                     <li class="lvl-2"><a href="#" class="site-nav lvl-2">Home Appliance</a></li>
@@ -216,71 +216,72 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="lvl1 parent megamenu"><a href="#">Features <i class="an an-angle-down-l"></i><span class="navLbl new">New</span></a>
-                                    <div class="megamenu style4">
-                                        <div class="row shop-grid-5">
-                                            <div class="lvl-1 col-md-3 col-lg-3 col-xl-2 item"><a href="#" class="site-nav lvl-1 menu-title">Vendor Pages</a>
-                                                <ul class="subLinks">
-                                                    <li><a href="vendor-dashboard.html" class="site-nav">Vendor Dashboard</a></li>
-                                                    <li><a href="vendor-profile.html" class="site-nav">Vendor Profile</a></li>
-                                                    <li><a href="vendor-uploads.html" class="site-nav">Vendor Uploads</a></li>
-                                                    <li><a href="vendor-tracking.html" class="site-nav">Vendor Tracking</a></li>
-                                                    <li><a href="vendor-service.html" class="site-nav">Vendor Service</a></li>
-                                                    <li><a href="vendor-settings.html" class="site-nav last">Vendor Settings</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="lvl-1 col-md-3 col-lg-3 col-xl-2 item"><a href="#" class="site-nav lvl-1 menu-title">Email Template</a>
-                                                <ul class="subLinks">
-                                                    <li><a target="_blank" href="email-template/email-order-success1.html" class="site-nav">Order Success 1</a></li>
-                                                    <li><a target="_blank" href="email-template/email-order-success2.html" class="site-nav">Order Success 2</a></li>
-                                                    <li><a target="_blank" href="email-template/email-invoice-template1.html" class="site-nav">Invoice Template 1</a></li>
-                                                    <li><a target="_blank" href="email-template/email-invoice-template2.html" class="site-nav last">Invoice Template 2</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="lvl-1 col-md-3 col-lg-3 col-xl-2 item"><a href="#" class="site-nav lvl-1 menu-title">Email Template</a>
-                                                <ul class="subLinks">
-                                                    <li class="lvl-2"><a target="_blank" href="email-template/email-forgot-password.html" class="site-nav">Mail Reset password</a></li>
-                                                    <li class="lvl-2"><a target="_blank" href="email-template/email-confirmation.html" class="site-nav">Mail Confirmation</a></li>
-                                                    <li class="lvl-2"><a target="_blank" href="email-template/email-promotional1.html" class="site-nav">Mail Promotional 1</a></li>
-                                                    <li class="lvl-2"><a target="_blank" href="email-template/email-promotional2.html" class="site-nav last">Mail Promotional 2</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="lvl-1 col-md-3 col-lg-3 col-xl-2 item"><a href="#" class="site-nav lvl-1 menu-title">Elements</a>
-                                                <ul class="subLinks">
-                                                    <li class="lvl-2"><a href="elements-typography.html" class="site-nav lvl-2">Typography</a></li>
-                                                    <li class="lvl-2"><a href="elements-buttons.html" class="site-nav lvl-2">Buttons</a></li>
-                                                    <li class="lvl-2"><a href="elements-titles.html" class="site-nav lvl-2">Titles</a></li>
-                                                    <li class="lvl-2"><a href="elements-banner-styles.html" class="site-nav lvl-2">Banner Styles</a></li>
-                                                    <li class="lvl-2"><a href="elements-testimonial.html" class="site-nav lvl-2">Testimonial</a></li>
-                                                    <li class="lvl-2"><a href="elements-accordions.html" class="site-nav lvl-2">Accordions</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="lvl-1 col-md-3 col-lg-3 col-xl-2 item"><a href="#" class="site-nav lvl-1 menu-title">Elements</a>
-                                                <ul class="subLinks">
-                                                    <li class="lvl-2"><a href="elements-icons.html" class="site-nav lvl-2">Icons</a></li>
-                                                    <li class="lvl-2"><a href="elements-blog-posts.html" class="site-nav lvl-2">Blog Posts</a></li>
-                                                    <li class="lvl-2"><a href="elements-product.html" class="site-nav lvl-2">Product</a></li>
-                                                    <li class="lvl-2"><a href="elements-product-tab.html" class="site-nav lvl-2">Product Tab</a></li>
-                                                    <li class="lvl-2"><a href="elements-top-info-bar.html" class="site-nav lvl-2">Top Info Bar</a></li>
-                                                    <li class="lvl-2"><a href="elements-top-promo-bar.html" class="site-nav lvl-2">Top Promo Bar</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="row clear mt-4">
-                                            <div class="col-md-3 col-lg-3">
-                                                <img src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-store.png" data-src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-store.png" alt="image"/>
-                                            </div>
-                                            <div class="col-md-3 col-lg-3">
-                                                <img src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-elements.png" data-src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-elements.png" alt="image"/>
-                                            </div>
-                                            <div class="col-md-3 col-lg-3">
-                                                <img src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-pages.png" data-src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-pages.png" alt="image"/>
-                                            </div>
-                                            <div class="col-md-3 col-lg-3">
-                                                <img src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-fast.png" data-src="{{asset('/')}}frontend/assets/images/megamenu/megamenu-fast.png" alt="image"/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <li class="lvl1 parent dropdown"><a href="#;">Categories <i class="an an-angle-down-l"></i></a>
+                                    <ul class="dropdown">
+                                        @foreach($categories as $category)
+                                        <li><a href="{{ route('product-category', ['id' => $category->id]) }}" class="site-nav">{{ $category->name }} <i class="{{count($category->subCategory) > 0 ? 'an an-angle-right-l': ''}}"></i></a>
+                                            @if(count($category->subCategory) > 0)
+                                            <ul class="dropdown">
+                                                @foreach($category->subCategory as $sub_category)
+                                                <li><a href="" class="site-nav">{{ $sub_category->name }}</a></li>
+                                                @endforeach
+                                                {{--<li><a href="aboutus-style2.html" class="site-nav">About Us Style2</a></li>
+                                                <li><a href="aboutus-style3.html" class="site-nav last">About Us Style3</a></li>--}}
+                                            </ul>
+                                            @endif
+                                        </li>
+                                        @endforeach
+                                        {{--<li><a href="contact-style1.html" class="site-nav">Contact Us <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="contact-style1.html" class="site-nav">Contact Us Style1</a></li>
+                                                <li><a href="contact-style2.html" class="site-nav last">Contact Us Style2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="lookbook-2columns.html" class="site-nav">Lookbook <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="lookbook-2columns.html" class="site-nav">2 Columns</a></li>
+                                                <li><a href="lookbook-3columns.html" class="site-nav">3 Columns</a></li>
+                                                <li><a href="lookbook-4columns.html" class="site-nav">4 Columns</a></li>
+                                                <li><a href="lookbook-5columns.html" class="site-nav">5 Columns + Fullwidth</a></li>
+                                                <li><a href="lookbook-shop.html" class="site-nav last">Lookbook Shop</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="faqs-style1.html" class="site-nav">FAQs <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="faqs-style1.html" class="site-nav">FAQs Style1</a></li>
+                                                <li><a href="faqs-style2.html" class="site-nav last">FAQs Style2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="brands-style1.html" class="site-nav">Brands <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="brands-style1.html" class="site-nav">Brands Style1</a></li>
+                                                <li><a href="brands-style2.html" class="site-nav last">Brands Style2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="my-account.html" class="site-nav">My Account <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="my-account.html" class="site-nav">My Account</a></li>
+                                                <li><a href="login-sliding-style.html" class="site-nav">Login Sliding Slideshow</a></li>
+                                                <li><a href="login.html" class="site-nav">Login</a></li>
+                                                <li><a href="register.html" class="site-nav">Register</a></li>
+                                                <li><a href="forgot-password.html" class="site-nav">Forgot Password</a></li>
+                                                <li><a href="change-password.html" class="site-nav last">Change Password</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="site-nav">Empty Pages <i class="an an-angle-right-l"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a href="empty-category.html" class="site-nav">Empty Category</a></li>
+                                                <li><a href="empty-cart.html" class="site-nav">Empty Cart</a></li>
+                                                <li><a href="empty-compare.html" class="site-nav">Empty Compare</a></li>
+                                                <li><a href="empty-wishlist.html" class="site-nav">Empty Wishlist</a></li>
+                                                <li><a href="empty-search.html" class="site-nav last">Empty Search</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="error-404.html" class="site-nav">Error 404 </a></li>
+                                        <li><a href="cms-page.html" class="site-nav">CMS Page</a></li>
+                                        <li><a href="elements-icons.html" class="site-nav">Icons</a></li>
+                                        <li><a href="coming-soon.html" class="site-nav">Coming soon <span class="lbl nm_label2">New</span></a></li>--}}
+                                    </ul>
                                 </li>
                                 <li class="lvl1 parent dropdown"><a href="#;">Pages <i class="an an-angle-down-l"></i></a>
                                     <ul class="dropdown">
